@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <nav class="container">
+        <a class="nav-brand" href="#">StorageJS</a>
+        <ul class="nav-menu">
+          <li data-dropdown>
+            <a href="#" class="nav-item">Cadastros</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="link-item">Pessoas</a></li>
+              <li><a href="#" class="link-item">Produtos</a></li>
+              <li><a href="#" class="link-item">Categorias</a></li>
+              <li><a href="#" class="link-item">Armazéns</a></li>
+              <li><a href="#" class="link-item">Avisos</a></li>
+            </ul>
+          </li>
+          <li data-dropdown>
+            <a href="#" class="nav-item">Operação</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="link-item">Solicitar</a></li>
+              <li><a href="#" class="link-item">Transferir</a></li>
+              <li><a href="#" class="link-item">Comprovantes</a></li>
+            </ul>
+          </li>
+          <li data-dropdown="">
+            <a href="#" class="nav-item">Relatórios</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="link-item">Pessoas</a></li>
+              <li><a href="#" class="link-item">Produtos</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="#" class="nav-profile">Perfil</a>
+      </nav>
+    </header>
+    <script src="./scripts/modules/dropdown-menu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+:root {
+  --back-color: rgb(10, 63, 8);
+  --font-color: #fff;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar {
+  padding: 30px;
+  background: var(--back-color);
+}
+
+.nav-brand {
+  font-size: 1.8rem;
+  color: var(--font-color);
+  font-weight: bold;
+}
+
+.nav-brand:hover {
+  transform: scale(1.12);
+}
+
+.nav-profile {
+  color: var(--font-color);
+  font-weight: bold;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu li {
+  padding: 0 30px;
+}
+
+.nav-item {
+  color: var(--font-color);
+  font-size: 1.275rem;
+}
+
+/* Dropdown */
+
+[data-dropdown] {
+  position: relative;
+}
+
+[data-dropdown] .dropdown-menu {
+  display: none;
+}
+
+[data-dropdown]:hover .dropdown-menu,
+[data-dropdown].active .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: var(--back-color);
+  top: 24px;
+  padding: 10px 16px;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu .link-item {
+  color: var(--font-color);
+  font-size: 1.1rem;
+}
+
+/* Animation */
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 5px solid rgba(3, 121, 23, 0.582);
+  box-sizing: border-box;
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  animation: border-animation 2s linear forwards;
+}
+
+@keyframes border-animation {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
