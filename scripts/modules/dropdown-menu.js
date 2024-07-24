@@ -1,35 +1,41 @@
-const dropdownMenu = document.querySelectorAll("[data-dropdown]");
-
-dropdownMenu.forEach((menu) => {
-  menu.addEventListener("click", handleClick);
-});
-
-function handleClick(event) {
-  event.preventDefault();
-  this.classList.add("active");
-  outsideClick(this, ["touchstart", "click"], () => {
-    this.classList.remove("active");
-  });
-}
-
-function outsideClick(element, events, callback) {
-  const html = document.documentElement;
-  const outside = "data-outside";
-
-  if (!element.hasAttribute(outside)) {
-    events.forEach((userEvent) => {
-      html.addEventListener(userEvent, handleOutsideClick);
+class DropdownnMenu {
+  constructor() {
+    this.dropdownMenu = document.querySelectorAll("[data-dropdown]");
+    this.dropdownMenu.forEach((menu) => {
+      menu.addEventListener("click", this.handleClickMenu.bind(this));
     });
-    element.setAttribute(outside, "");
   }
 
-  function handleOutsideClick(event) {
-    if (!element.contains(event.target)) {
-      element.removeAttribute(outside);
-      events.forEach((userEvent) => [
-        html.removeEventListener(userEvent, handleOutsideClick),
-      ]);
-      callback();
+  handleClickMenu(event) {
+    event.preventDefault();
+    const menu = event.currentTarget;
+    menu.classList.add("active");
+    this.handleOutsideClickMenu(menu, ["touchstart", "click"], () => {
+      menu.classList.remove("active");
+    });
+  }
+
+  handleOutsideClickMenu(element, events, callback) {
+    const html = document.documentElement;
+    const outside = "data-outside";
+
+    if (!element.hasAttribute(outside)) {
+      events.forEach((evt) => {
+        html.addEventListener(evt, handleClick);
+      });
+      element.setAttribute(outside, "");
+    }
+
+    function handleClick(event) {
+      if (!element.contains(event.target)) {
+        element.removeAttribute(outside);
+        events.forEach((evt) => {
+          html.removeEventListener(evt, handleClick);
+        });
+        callback();
+      }
     }
   }
 }
+
+const menu = new DropdownnMenu();

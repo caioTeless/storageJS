@@ -7,39 +7,37 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header class="navbar">
-      <nav class="container">
-        <a class="nav-brand" href="#">StorageJS</a>
-        <ul class="nav-menu">
-          <li data-dropdown>
-            <a href="#" class="nav-item">Cadastros</a>
-            <ul class="dropdown-menu">
-              <li><a href="#" class="link-item">Pessoas</a></li>
-              <li><a href="#" class="link-item">Produtos</a></li>
-              <li><a href="#" class="link-item">Categorias</a></li>
-              <li><a href="#" class="link-item">Armazéns</a></li>
-              <li><a href="#" class="link-item">Avisos</a></li>
-            </ul>
-          </li>
-          <li data-dropdown>
-            <a href="#" class="nav-item">Operação</a>
-            <ul class="dropdown-menu">
-              <li><a href="#" class="link-item">Solicitar</a></li>
-              <li><a href="#" class="link-item">Transferir</a></li>
-              <li><a href="#" class="link-item">Comprovantes</a></li>
-            </ul>
-          </li>
-          <li data-dropdown="">
-            <a href="#" class="nav-item">Relatórios</a>
-            <ul class="dropdown-menu">
-              <li><a href="#" class="link-item">Pessoas</a></li>
-              <li><a href="#" class="link-item">Produtos</a></li>
-            </ul>
+    <header class="header-nav">
+      <nav class="menu">
+        <button
+          data-menu="button"
+          aria-expanded="false"
+          aria-controls="menu"
+        ></button>
+        <ul class="navbar" data-menu="list" id="menu">
+          <li class="nav-brand"><a href="#">StorageJS</a></li>
+          <ul class="nav-center">
+            <li class="nav-item" data-dropdown>
+              <a href="#" class="nav-link">Cadastros</a>
+              <ul class="dropdown">
+                <li><a href="#">Pessoas</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Armazens</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Operações</a></li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Relatórios</a>
+            </li>
+          </ul>
+          <li class="nav-profile">
+            <a href="#" class="nav-profile">Perfil</a>
           </li>
         </ul>
-        <a href="#" class="nav-profile">Perfil</a>
       </nav>
     </header>
     <script src="./scripts/modules/dropdown-menu.js"></script>
+    <script src="./scripts/modules/menu-mobile.js"></script>
   </body>
 </html>
