@@ -1,40 +1,48 @@
-const menuButton = document.querySelector('[data-menu="button"]');
-const menuList = document.querySelector('[data-menu="list"]');
-const events = ["click", "touchstart"];
+class MenuMobile {
+  constructor() {
+    this.menuButton = document.querySelector('[data-menu="button"]');
+    this.menuList = document.querySelector('[data-menu="list"]');
+    this.events = ["click", "touchstart"];
 
-function openMenu(event) {
-  menuList.classList.add("active");
-  menuButton.classList.add("active");
-  handleOutsideClickMenu(menuList, events, () => {
-    menuList.classList.remove("active");
-    menuButton.classList.remove("active");
-  });
-}
+    this.openMenu = this.openMenu.bind(this);
 
-function handleOutsideClickMenu(element, events, callback) {
-  const html = document.documentElement;
-  const outside = "data-outside";
-
-  if (!element.hasAttribute(outside)) {
-    events.forEach((evt) => {
-      setTimeout(() => {
-        html.addEventListener(evt, handleClick);
-      });
+    this.events.forEach((evt) => {
+      this.menuButton.addEventListener(evt, this.openMenu);
     });
-    element.setAttribute(outside, "");
   }
 
-  function handleClick(event) {
-    if (!element.contains(event.target)) {
-      element.removeAttribute(outside);
+  openMenu(event) {
+    this.menuList.classList.add("active");
+    this.menuButton.classList.add("active");
+    this.handleOutsideClickMenu(this.menuList, this.events, () => {
+      this.menuList.classList.remove("active");
+      this.menuButton.classList.remove("active");
+    });
+  }
+
+  handleOutsideClickMenu(element, events, callback) {
+    const html = document.documentElement;
+    const outside = "data-outside";
+
+    if (!element.hasAttribute(outside)) {
       events.forEach((evt) => {
-        html.removeEventListener(evt, handleClick);
+        setTimeout(() => {
+          html.addEventListener(evt, handleClick);
+        });
       });
-      callback();
+      element.setAttribute(outside, "");
+    }
+
+    function handleClick(event) {
+      if (!element.contains(event.target)) {
+        element.removeAttribute(outside);
+        events.forEach((evt) => {
+          html.removeEventListener(evt, handleClick);
+        });
+        callback();
+      }
     }
   }
 }
 
-events.forEach((evt) => {
-  menuButton.addEventListener(evt, openMenu);
-});
+const menuMobile = new MenuMobile();
