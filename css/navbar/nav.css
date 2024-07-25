@@ -1,3 +1,10 @@
+:root {
+  --nav: #0f1a10;
+  --dropdown: #1f3621;
+  --burger: #0c0b0b;
+  --back-burger: #ebe1e1;
+}
+
 body {
   padding: 0px;
   margin: 0px;
@@ -15,8 +22,8 @@ ul {
 }
 
 .menu {
-  background: tomato;
-  padding: 20px;
+  background: var(--nav);
+  padding: 10px;
 }
 
 .navbar {
@@ -24,6 +31,7 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 .nav-center {
@@ -33,7 +41,7 @@ ul {
 
 .nav-brand a {
   font-size: 2.25rem;
-  font-weight: bold;
+  font-weight: 100;
   color: #ffe;
 }
 
@@ -45,7 +53,7 @@ ul {
 .nav-profile {
   font-size: 1.25rem;
   color: #ffe;
-  font-weight: bold;
+  font-weight: 100;
 }
 
 [data-dropdown] {
@@ -64,13 +72,13 @@ ul {
 .dropdown {
   position: absolute;
   border: 1px solid black;
-  background: tomato;
+  background: var(--dropdown);
   padding: 8px 20px;
   top: 26px;
 }
 
 .dropdown li {
-  padding: 5px 0px;
+  padding: 10px 4px;
 }
 
 .dropdown li a {
@@ -86,14 +94,14 @@ ul {
 /* Responsive */
 @media (max-width: 800px) {
   [data-menu="button"] {
-    background: #222;
+    background: var(--back-burger);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     text-transform: uppercase;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: bold;
-    color: #fff;
+    color: var(--burger);
     cursor: pointer;
     margin: 15px 0px;
     position: relative;
@@ -109,8 +117,8 @@ ul {
     display: inline-block;
     height: 2px;
     width: 20px;
-    background: #fff;
-    box-shadow: 0 5px #fff, 0 -5px #fff;
+    background: var(--burger);
+    box-shadow: 0 5px var(--burger), 0 -5px var(--burger);
     transition: transform 0.3s;
   }
 
@@ -121,7 +129,7 @@ ul {
   [data-menu="list"] {
     display: none;
     position: absolute;
-    background: tomato;
+    background: var(--nav);
     width: 160px;
     z-index: 200;
     top: 0;
@@ -151,7 +159,7 @@ ul {
 
   .dropdown {
     padding: 0px 12px;
-    background: rgb(241, 104, 104);
+    background: var(--dropdown);
   }
 
   .nav-center {

@@ -7,37 +7,42 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header class="header-nav">
-      <nav class="menu">
-        <button
-          data-menu="button"
-          aria-expanded="false"
-          aria-controls="menu"
-        ></button>
-        <ul class="navbar" data-menu="list" id="menu">
-          <li class="nav-brand"><a href="#">StorageJS</a></li>
-          <ul class="nav-center">
-            <li class="nav-item" data-dropdown>
-              <a href="#" class="nav-link">Cadastros</a>
-              <ul class="dropdown">
-                <li><a href="#">Pessoas</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Armazens</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a href="#" class="nav-link">Operações</a></li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Relatórios</a>
+    <div id="app">
+      <header class="header-nav">
+        <nav class="menu">
+          <button
+            data-menu="button"
+            aria-expanded="false"
+            aria-controls="menu"
+          ></button>
+          <ul class="navbar" data-menu="list" id="menu">
+            <li class="nav-brand"><a href="#">StorageJS</a></li>
+            <ul class="nav-center">
+              <li class="nav-item" data-dropdown>
+                <a href="#" class="nav-link">Cadastros</a>
+                <ul class="dropdown">
+                  <li><a href="#">Pessoas</a></li>
+                  <li><a href="#">Produtos</a></li>
+                  <li><a href="#">Categorias</a></li>
+                  <li><a href="#">Armazens</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Operações</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Relatórios</a>
+              </li>
+            </ul>
+            <li class="nav-profile">
+              <a href="#" class="nav-profile">Perfil</a>
             </li>
           </ul>
-          <li class="nav-profile">
-            <a href="#" class="nav-profile">Perfil</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <script src="./scripts/modules/dropdown-menu.js"></script>
-    <script src="./scripts/modules/menu-mobile.js"></script>
+        </nav>
+      </header>
+      <button @click="test()">Click here</button>
+    </div>
+    <script src="./scripts/modules/vue.js"></script>
+    <script type="module" src="./scripts/script.js"></script>
   </body>
 </html>
