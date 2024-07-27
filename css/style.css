@@ -5,8 +5,8 @@
 @import url("../css/navbar/nav.css");
 @import url("../css/navbar/menu-mobile.css");
 
-/* Animations */
-@import url("../css/navbar/animations.css");
-
 /* Responsive */
 @import url("../css/utils/responsive.css");
+
+/* Animations */
+@import url("../css/navbar/animations.css");
