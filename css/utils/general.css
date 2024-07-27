@@ -1,0 +1,22 @@
+:root {
+  --nav: #0f1a10;
+  --dropdown: #1f3621;
+  --burger: #0c0b0b;
+  --back-burger: #ebe1e1;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}

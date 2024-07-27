@@ -1,7 +1,5 @@
 import clickOutside from "./clickOutside.js";
 
-// dropdownMenu = "[data-dropdown]"
-
 export default class DropdownnMenu {
   constructor(dropdownMenu, events) {
     this.dropdownMenu = document.querySelectorAll(dropdownMenu);
