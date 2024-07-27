@@ -98,39 +98,3 @@
   animation: border-animation 1s linear forwards,
     color-animation 1s linear forwards;
 }
-
-@keyframes border-animation {
-  0% {
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-  }
-  25% {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  }
-  50% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  75% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
-  }
-}
-
-@keyframes color-animation {
-  0% {
-    border-color: rgba(204, 212, 204, 0.582);
-  }
-  25% {
-    border-color: rgba(180, 100, 204, 0.582);
-  }
-  50% {
-    border-color: rgba(120, 212, 204, 0.582);
-  }
-  75% {
-    border-color: rgba(80, 212, 204, 0.582);
-  }
-  100% {
-    border-color: rgba(6, 1, 17, 0.822);
-  }
-}
