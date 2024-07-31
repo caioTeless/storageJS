@@ -50,6 +50,12 @@
   .dropdown {
     position: static;
     border: none;
+    padding: 0px 12px;
+    background: var(--dropdown);
+  }
+
+  .dropdown::before {
+    display: none;
   }
 
   [data-dropdown] {
@@ -61,11 +67,6 @@
   }
   .nav-brand a {
     font-size: 1.56rem;
-  }
-
-  .dropdown {
-    padding: 0px 12px;
-    background: var(--dropdown);
   }
 
   .nav-center {

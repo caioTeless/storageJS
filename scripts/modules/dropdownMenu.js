@@ -23,7 +23,7 @@ export default class DropdownnMenu {
   addDropdownEvent() {
     this.dropdownMenu.forEach((menu) => {
       this.events.forEach((evt) => {
-        menu.addEventListener("click", this.activeDropdownMenu);
+        menu.addEventListener(evt, this.activeDropdownMenu);
       });
     });
   }

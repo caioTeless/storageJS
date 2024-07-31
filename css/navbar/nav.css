@@ -51,12 +51,16 @@
   animation: drop-animation 0.28s forwards;
 }
 
+.active-menu {
+  color: rgba(255, 255, 238, 0.75);
+}
+
 .dropdown {
   position: absolute;
   border: 1px solid black;
   background: var(--dropdown);
   padding: 8px 20px;
-  top: 26px;
+  top: 24px;
 }
 
 .dropdown li {
@@ -65,6 +69,14 @@
 
 .dropdown li a {
   color: #ffe;
+}
+
+a.nav-link:hover {
+  color: rgba(255, 255, 238, 0.24);
+}
+
+.dropdown-item:hover {
+  color: rgba(255, 255, 238, 0.75);
 }
 
 [data-menu="button"] {
@@ -76,20 +88,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  border: 2px solid transparent;
-  box-sizing: border-box;
-  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-  animation: border-animation 2s linear forwards,
-    color-animation 2s linear forwards;
-}
-
-.dropdown::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+  z-index: -1;
   height: 100%;
   width: 100%;
   border: 2px solid transparent;
