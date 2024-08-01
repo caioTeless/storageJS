@@ -12,7 +12,6 @@ export default class DropdownnMenu {
   }
 
   activeDropdownMenu(event) {
-    event.preventDefault();
     const menu = event.currentTarget;
     menu.classList.add(this.active);
     clickOutside(menu, this.events, () => {
