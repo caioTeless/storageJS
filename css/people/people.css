@@ -1,0 +1,48 @@
+.grid-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 5px 20px;
+}
+
+.grid-headers,
+.grid-row {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-row:last-child {
+  border-bottom: 0.56px solid rgb(121, 6, 6);
+}
+
+.grid-headers h2 {
+  border-bottom: 0.56px solid rgb(121, 6, 6);
+}
+
+.grid-headers h2:first-child {
+  border-left: 0.56px solid rgb(121, 6, 6);
+}
+
+.grid-headers h2 {
+  border-top: 0.56px solid rgb(121, 6, 6);
+}
+
+.grid-row p:first-child {
+  border-left: 0.56px solid rgb(121, 6, 6);
+}
+
+.grid-headers h2,
+.grid-row p,
+.grid-row a {
+  padding: 10px;
+  border-right: 0.56px solid rgb(121, 6, 6);
+  margin: 0;
+}
+
+.grid-row:hover {
+  background: rgb(243, 247, 244);
+}
+
+.grid-headers h2 {
+  font-weight: 300;
+}

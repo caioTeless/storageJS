@@ -1,5 +1,7 @@
 /* General */
 @import url("../css/utils/general.css");
+@import url("../css/utils/modal.css");
+@import url("../css/utils/form.css");
 
 /* Navbar */
 @import url("../css/navbar/nav.css");
@@ -10,3 +12,6 @@
 
 /* Animations */
 @import url("../css/navbar/animations.css");
+
+/* Form */
+@import url("../css/people/people.css");

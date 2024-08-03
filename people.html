@@ -8,7 +8,88 @@
   </head>
   <body>
     <div id="app">
+      <div class="modal-container">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 class="modal-title">Criar</h2>
+            <button class="modal-button">X</button>
+          </div>
+          <div class="modal-body">
+            <form class="form-modal">
+              <div class="form-control">
+                <label>Nome</label>
+                <input type="text" />
+              </div>
+              <div class="form-control">
+                <label>CEP</label>
+                <input type="text" />
+              </div>
+              <div class="form-control address">
+                <label>Endereço</label>
+                <input type="text" />
+              </div>
+              <div class="form-control">
+                <label>Cidade</label>
+                <input type="text" />
+              </div>
+              <div class="form-control">
+                <label>Telefone</label>
+                <input type="text" />
+              </div>
+              <div class="form-control">
+                <label>Tipo</label>
+                <input type="text" />
+              </div>
+            </form>
+          </div>
+          <button class="modal-save">Salvar</button>
+        </div>
+      </div>
       <header class="header-nav"></header>
+      <div class="grid-container">
+        <div class="grid-headers">
+          <h2>Nome</h2>
+          <h2>Endereço</h2>
+          <h2>Cidade</h2>
+          <h2>Telefone</h2>
+          <h2>Tipo</h2>
+          <h2>Ações</h2>
+        </div>
+        <div class="grid-body">
+          <div class="grid-row">
+            <p>Maria</p>
+            <p>Rua 123 123</p>
+            <p>Americana</p>
+            <p>1231231333</p>
+            <p>Tipo 123</p>
+            <a href="#">Ações</a>
+          </div>
+          <div class="grid-row">
+            <p>Maria</p>
+            <p>Rua 123 123</p>
+            <p>Americana</p>
+            <p>1231231333</p>
+            <p>Tipo 123</p>
+            <a href="#">Ações</a>
+          </div>
+          <div class="grid-row">
+            <p>Maria</p>
+            <p>Rua 123 123</p>
+            <p>Americana</p>
+            <p>1231231333</p>
+            <p>Tipo 123</p>
+            <a href="#">Ações</a>
+          </div>
+          <div class="grid-row">
+            <p>Maria</p>
+            <p>Rua 123 123</p>
+            <p>Americana</p>
+            <p>1231231333</p>
+            <p>Tipo 123</p>
+            <a href="#">Ações</a>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./scripts/modules/vue.js"></script>
     <script type="module" src="./scripts/script.js"></script>

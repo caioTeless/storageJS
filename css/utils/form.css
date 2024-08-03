@@ -1,0 +1,55 @@
+label {
+  display: block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+}
+
+input {
+  height: 20px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 1.125rem;
+  background: rgba(243, 240, 240, 0.616);
+  font-weight: 100;
+  display: block;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid rgb(172, 138, 138);
+  background: #fff;
+  padding: 10px;
+}
+
+.form-modal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  padding: 10px 30px 10px 10px;
+}
+
+.form-control.address {
+  grid-column: span 3;
+}
+
+button.modal-save {
+  height: 35px;
+  width: 100px;
+  color: #fff;
+  background: var(--nav);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.modal-save:hover {
+  background: rgb(8, 54, 14);
+  box-shadow: 0 0 0 1px rgba(1, 56, 5, 0.616);
+}
