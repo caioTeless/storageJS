@@ -48,7 +48,7 @@
 [data-dropdown]:hover .dropdown,
 [data-dropdown].active .dropdown {
   display: block;
-  animation: drop-animation 0.28s forwards;
+  animation: fadeIn 0.28s forwards;
 }
 
 .active-menu {

@@ -18,31 +18,49 @@
             <form class="form-modal">
               <div class="form-control">
                 <label>Nome</label>
-                <input type="text" />
+                <input type="text" v-model="people.name.value" />
+                <span class="error" v-if="people.name.error"
+                  >{{people.name.error}}</span
+                >
               </div>
               <div class="form-control">
                 <label>CEP</label>
-                <input type="text" />
+                <input type="text" v-model="people.postalCode.value" />
+                <span class="error" v-if="people.postalCode.error"
+                  >{{people.postalCode.error}}</span
+                >
               </div>
               <div class="form-control address">
                 <label>Endereço</label>
-                <input type="text" />
+                <input type="text" v-model="people.address.value" />
+                <span class="error" v-if="people.address.error"
+                  >{{people.address.error}}</span
+                >
               </div>
               <div class="form-control">
                 <label>Cidade</label>
-                <input type="text" />
+                <input type="text" v-model="people.city.value" />
+                <span class="error" v-if="people.city.error"
+                  >{{people.city.error}}</span
+                >
               </div>
               <div class="form-control">
                 <label>Telefone</label>
-                <input type="text" />
+                <input type="text" v-model="people.phone.value" />
+                <span class="error" v-if="people.phone.error"
+                  >{{people.phone.error}}</span
+                >
               </div>
               <div class="form-control">
                 <label>Tipo</label>
-                <input type="text" />
+                <input type="text" v-model="people.type.value" />
+                <span class="error" v-if="people.type.error"
+                  >{{people.type.error}}</span
+                >
               </div>
             </form>
           </div>
-          <button class="modal-save">Salvar</button>
+          <button class="modal-save" v-on:click="validateForm()">Salvar</button>
         </div>
       </div>
       <header class="header-nav"></header>
