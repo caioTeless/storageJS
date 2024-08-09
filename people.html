@@ -17,46 +17,85 @@
           <div class="modal-body">
             <form class="form-modal">
               <div class="form-control">
-                <label>Nome</label>
-                <input type="text" v-model="people.name.value" />
-                <span class="error" v-if="people.name.error"
-                  >{{people.name.error}}</span
-                >
+                <input-vue
+                  id-for="name"
+                  name="Nome"
+                  type="text"
+                  v-model="people.name.value"
+                  :error="people.name.error"
+                ></input-vue>
               </div>
               <div class="form-control">
-                <label>CEP</label>
-                <input type="text" v-model="people.postalCode.value" />
-                <span class="error" v-if="people.postalCode.error"
-                  >{{people.postalCode.error}}</span
-                >
+                <input-vue
+                  id-for="cep"
+                  name="CEP"
+                  type="text"
+                  v-model="people.postalCode.value"
+                  :error="people.postalCode.error"
+                  maxlength="9"
+                ></input-vue>
               </div>
               <div class="form-control address">
-                <label>Endereço</label>
-                <input type="text" v-model="people.address.value" />
-                <span class="error" v-if="people.address.error"
-                  >{{people.address.error}}</span
+                <input-vue
+                  id-for="mainaddress"
+                  name="Rua"
+                  type="text"
+                  v-model="people.mainaddress.value"
+                  :error="people.mainaddress.error"
                 >
+                </input-vue>
+                <input-vue
+                  id-for="neighborhood"
+                  name="Bairro"
+                  type="text"
+                  v-model="people.neighborhood.value"
+                  :error="people.neighborhood.error"
+                >
+                </input-vue>
+                <input-vue
+                  id-for="number"
+                  name="Número"
+                  type="text"
+                  v-model="people.number.value"
+                  :error="people.number.error"
+                >
+                </input-vue>
+                <input-vue
+                  id-for="complement"
+                  name="Complemento"
+                  type="text"
+                  v-model="people.complement.value"
+                  :error="people.complement.error"
+                >
+                </input-vue>
               </div>
               <div class="form-control">
-                <label>Cidade</label>
-                <input type="text" v-model="people.city.value" />
-                <span class="error" v-if="people.city.error"
-                  >{{people.city.error}}</span
-                >
+                <input-vue
+                  id-for="city"
+                  name="Cidade"
+                  type="text"
+                  v-model="people.city.value"
+                  :error="people.city.error"
+                ></input-vue>
               </div>
               <div class="form-control">
-                <label>Telefone</label>
-                <input type="text" v-model="people.phone.value" />
-                <span class="error" v-if="people.phone.error"
-                  >{{people.phone.error}}</span
-                >
+                <input-vue
+                  id-for="phone"
+                  name="Telefone"
+                  type="text"
+                  v-model="people.phone.value"
+                  :error="people.phone.error"
+                  maxlength="15"
+                ></input-vue>
               </div>
               <div class="form-control">
-                <label>Tipo</label>
-                <input type="text" v-model="people.type.value" />
-                <span class="error" v-if="people.type.error"
-                  >{{people.type.error}}</span
-                >
+                <input-vue
+                  id-for="type"
+                  name="Tipo"
+                  type="text"
+                  v-model="people.type.value"
+                  :error="people.type.error"
+                ></input-vue>
               </div>
             </form>
           </div>
@@ -64,50 +103,7 @@
         </div>
       </div>
       <header class="header-nav"></header>
-      <div class="grid-container">
-        <div class="grid-headers">
-          <h2>Nome</h2>
-          <h2>Endereço</h2>
-          <h2>Cidade</h2>
-          <h2>Telefone</h2>
-          <h2>Tipo</h2>
-          <h2>Ações</h2>
-        </div>
-        <div class="grid-body">
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-        </div>
-      </div>
+      <table-vue></table-vue>
     </div>
     <script src="./scripts/modules/vue.js"></script>
     <script type="module" src="./scripts/script.js"></script>

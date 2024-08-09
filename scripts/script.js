@@ -2,6 +2,8 @@ import DropdownnMenu from "./modules/dropdownMenu.js";
 import MenuMobile from "./modules/menuMobile.js";
 import NavMenuItems from "./modules/navMenuItems.js";
 import Modal from "./modules/modal.js";
+import Input from "./components/input.js";
+import Table from "./components/table.js";
 
 const app = new Vue({
   el: "#app",
@@ -17,7 +19,22 @@ const app = new Vue({
         value: "",
         error: "",
       },
-      address: {
+      mainaddress: {
+        necessary: true,
+        value: "",
+        error: "",
+      },
+      neighborhood: {
+        necessary: true,
+        value: "",
+        error: "",
+      },
+      number: {
+        necessary: true,
+        value: "",
+        error: "",
+      },
+      complement: {
         necessary: true,
         value: "",
         error: "",
@@ -39,6 +56,11 @@ const app = new Vue({
       },
     },
   },
+  watch: {
+    "people.postalCode.value"(nv) {
+      this.fetchCep(nv.replace("-", ""));
+    },
+  },
   methods: {
     loadNav() {
       fetch("_navbar.html")
@@ -50,7 +72,25 @@ const app = new Vue({
           console.log("Ocorreu algum erro");
         });
     },
+    fetchCep(cep) {
+      console.log(cep);
+      if (cep.length === 8) {
+        try {
+          fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then((response) => response.json())
+            .then((data) => {
+              this.people.mainaddress.value = data.logradouro;
+              this.people.neighborhood.value = data.bairro;
+              this.people.complement.value = data.complemento;
+              this.people.city.value = data.localidade;
+            });
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    },
     validateForm() {
+      console.log(this.people);
       this.validFields();
     },
     validFields() {
@@ -65,17 +105,10 @@ const app = new Vue({
         }
       }
     },
-
-    validCep(cep) {
-      var re = /^\d{5}-?\d{3}$/;
-      return re.test(cep);
-    },
-
-    validEmail(email) {
-      var re =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    },
+  },
+  components: {
+    "input-vue": Input,
+    "table-vue": Table,
   },
   mounted() {
     this.loadNav();

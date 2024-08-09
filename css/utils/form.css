@@ -27,7 +27,7 @@ input:focus {
 
 .form-modal {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 0.5fr 1fr;
   padding: 25px;
   margin-bottom: 20px;
 }
@@ -39,6 +39,12 @@ input:focus {
 
 .form-control.address {
   grid-column: span 3;
+}
+
+div.address {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr 1fr;
+  gap: 40px;
 }
 
 button.modal-save {
