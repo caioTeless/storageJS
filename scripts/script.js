@@ -15,32 +15,32 @@ const app = new Vue({
         error: "",
       },
       postalCode: {
-        necessary: true,
+        necessary: false,
         value: "",
         error: "",
       },
       mainaddress: {
-        necessary: true,
+        necessary: false,
         value: "",
         error: "",
       },
       neighborhood: {
-        necessary: true,
+        necessary: false,
         value: "",
         error: "",
       },
       number: {
-        necessary: true,
+        necessary: false,
         value: "",
         error: "",
       },
       complement: {
-        necessary: true,
+        necessary: false,
         value: "",
         error: "",
       },
       city: {
-        necessary: true,
+        necessary: false,
         value: "",
         error: "",
       },
@@ -50,11 +50,13 @@ const app = new Vue({
         error: "",
       },
       type: {
-        necessary: true,
+        necessary: false,
         value: "",
         error: "",
       },
     },
+    peopleList: [],
+    localModel: [],
   },
   watch: {
     "people.postalCode.value"(nv) {
@@ -73,7 +75,6 @@ const app = new Vue({
         });
     },
     fetchCep(cep) {
-      console.log(cep);
       if (cep.length === 8) {
         try {
           fetch(`https://viacep.com.br/ws/${cep}/json/`)
@@ -90,8 +91,30 @@ const app = new Vue({
       }
     },
     validateForm() {
-      console.log(this.people);
-      this.validFields();
+      if (this.validFields()) {
+        this.peopleList.push(this.people);
+      }
+      this.peopleList.forEach((item) => {
+        const values = Object.fromEntries(
+          Object.entries(item).map(([key, data]) => [key, data.value])
+        );
+        localStorage.setItem(
+          "people-" + item.name.value,
+          JSON.stringify(values)
+        );
+      });
+      this.getLocalStorage();
+    },
+    getLocalStorage() {
+      const keyStorage = [];
+      for (var key in localStorage) {
+        if (key.includes("people")) {
+          keyStorage.push(key);
+        }
+      }
+      keyStorage.forEach((item) => {
+        this.localModel.push(JSON.parse(localStorage.getItem(item)));
+      });
     },
     validFields() {
       for (let field in this.people) {
@@ -99,9 +122,11 @@ const app = new Vue({
           this.people[field].necessary &&
           this.people[field].value.trim() === ""
         ) {
-          this.people[field].error = "É necessário o preenchimento.";
+          this.people[field].error = "Campo obrigatório.";
+          return false;
         } else {
           this.people[field].error = "";
+          return true;
         }
       }
     },
@@ -116,5 +141,6 @@ const app = new Vue({
     new MenuMobile('[data-menu="button"]', '[data-menu="list"]').init();
     new NavMenuItems(".nav-center .nav-link").init();
     new Modal().init();
+    this.getLocalStorage();
   },
 });

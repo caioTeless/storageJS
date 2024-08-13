@@ -1,48 +1,29 @@
 export default {
   name: "Table",
+  props: {
+    headers: "",
+    actionTitle: "",
+    localModel: null,
+  },
   template: `
     <div class="grid-container">
-        <div class="grid-headers">
-          <h2>Nome</h2>
-          <h2>Endereço</h2>
-          <h2>Cidade</h2>
-          <h2>Telefone</h2>
-          <h2>Tipo</h2>
-          <h2>Ações</h2>
-        </div>
-        <div class="grid-body">
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-          <div class="grid-row">
-            <p>Maria</p>
-            <p>Rua 123 123</p>
-            <p>Americana</p>
-            <p>1231231333</p>
-            <p>Tipo 123</p>
-            <a href="#">Ações</a>
-          </div>
-        </div>
-    </div>`,
+      <button class="grid-main-button">Criar</button>
+      <table>
+        <thead>
+          <tr>
+            <th v-for="header in headers.split(',')">{{header}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in localModel" :key="index">
+            <td class="align-item" v-for="header in headers.split(',')" :key="header">
+              <span v-if="item[header]">{{ item[header] }}</span>
+              <span v-else >-</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div v-if="localModel == null" class="grid-no-data">Nenhuma informação a ser exibida.</div>
+    </div>
+   `,
 };

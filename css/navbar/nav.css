@@ -61,6 +61,7 @@
   background: var(--dropdown);
   padding: 8px 20px;
   top: 24px;
+  z-index: 2;
 }
 
 .dropdown li {

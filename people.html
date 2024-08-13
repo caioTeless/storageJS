@@ -103,7 +103,10 @@
         </div>
       </div>
       <header class="header-nav"></header>
-      <table-vue></table-vue>
+      <table-vue
+        :local-model="localModel"
+        headers="name, address, city, phone, type"
+      ></table-vue>
     </div>
     <script src="./scripts/modules/vue.js"></script>
     <script type="module" src="./scripts/script.js"></script>

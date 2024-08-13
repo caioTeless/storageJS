@@ -1,6 +1,6 @@
 export default class Modal {
   constructor() {
-    this.actions = document.querySelectorAll(".grid-row a");
+    this.actions = document.querySelectorAll(".grid-main-button");
     this.modal = document.querySelector(".modal-container");
     this.buttonModal = document.querySelector(".modal-button");
 
@@ -16,6 +16,7 @@ export default class Modal {
   }
 
   addToggle(event) {
+    console.log("click");
     this.modal.classList.toggle("active-modal");
   }
 
